@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="style.css">
+    <link href = "css/jquery-ui.css" rel= "stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <script src = "js/jquery-1.10.2.js"></script>
+    <script src = "js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>بازی برج هانوی - نازبازی</title>
+  </head>
+  <body>
+
+<div id="particles-js">
+
+    <div class="content-center ">
+      <!-- برج یک -->
+      <ul class="tower" id="tower-1" data="1">
+        <li class="disk disk-3 temp-3" id="disk-3" data="3"></li>
+        <li class="disk disk-2 temp-2" id="disk-2" data="2"></li>
+        <li class="disk disk-1 temp-1" id="disk-1" data="1"></li>
+      </ul>
+
+      <!-- برج دوم -->
+      <ul class="tower" id="tower-2" data="2">
+      </ul>
+
+      <!-- برج سوم -->
+      <ul class="tower" id="tower-3" data="3">
+      </ul>
+
+    </div>
+<!-- end content-center -->
+
+
+
+<div style="display:none">
+
+<!-- نگهدارنده اینکه کاربر کدام دیسک را انتخاب کرده است -->
+<label for=""> ایدی دیسک انتخاب شده
+<input type="text" id="temp-disk" value="">
+</label>
+</br>
+
+<label for=""> اینکه موس رو کدام برج قرار دارد
+<input type="text" id="temp-tower" value="">
+</label>
+</br>
+
+<label for=""> اخرین دیسکی که در برج 1 قرار گرفته است
+<input type="text" id="last-li-tower-1" value="">
+</label>
+</br>
+
+<label for=""> اخرین دیسکی که در برج 2 قرار گرفته است
+<input type="text" id="last-li-tower-2" value="">
+</label>
+</br>
+
+<label for=""> اخرین دیسکی که در برج 3 قرار گرفته است
+<input type="text" id="last-li-tower-3" value="">
+</label>
+</br>
+
+<label for=""> برج جاری
+<input type="text" id="disk_in_tower" value="">
+</label>
+</br>
+
+<label for=""> نگهدارنده ایدی برج قبلی
+<input type="text" id="select-disk-to-drag" value="">
+</label>
+</br>
+
+<label for=""> وضعیت برد کاربر
+<input type="text" id="user-winner" value="">
+</label>
+</br>
+
+<label for=""> وضعیت نمایش پیام
+<input type="text" id="user-winner-msg" value="0">
+</label>
+</br>
+
+</div>
+<!-- end display:none -->
+
+<div class="move-counts">
+  <input type="text" id="move-count" value="0">
+  <span>جابجایی</span>
+</div>
+<!-- end move-counts -->
+
+
+<!-- دکمه رستارت بازی -->
+<button type="button" id="reset"></button>
+</div>
+<!-- end particles-js -->
+
+<canvas height="1" id="confetti" width="1"></canvas>
+<div class="message"></div>
+
+
+<div class="help-popup">
+  <span>دیسک ها را از میله 1 به میله 3 انتقال دهید </span>
+</div>
+<!-- end help-popup -->
+
+
+
+<!-- کتابخانه های کمکی زیبا سازی -->
+<script type="text/javascript" src="js/particles.min.js"></script>
+<script type="text/javascript" src="js/stars.js"></script>
+<script type="text/javascript" src="js/confitte.js"></script>
+  </body>
+</html>

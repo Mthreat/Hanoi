@@ -1,0 +1,364 @@
+/*
+ -----------------------------------
+ -----------------------------------
+ In The name Of God
+ Craete By : Alireza Parsam
+ Year : 1397 - spring
+ -----------------------------------
+ -----------------------------------
+*/
+
+@font-face{
+  font-family:IRANSans;
+  font-style:normal;
+  font-weight:400;
+  src:url(fonts/IRANSansWeb.eot);
+  src:url(fonts/IRANSansWeb.eot?#iefix) format('embedded-opentype'),
+  url(fonts/IRANSansWeb.woff2) format('woff2'),
+  url(fonts/IRANSansWeb.woff) format('woff'),
+  url(fonts/IRANSansWeb.ttf) format('truetype')
+}
+
+
+body{
+  margin:0;
+  padding:0;
+  background-color: rgb(255,137,107);
+  overflow:hidden;
+  text-align:center;
+  font-family:Helvetica, sans-serif;
+}
+
+body:after{
+  content:"";
+  width:500%;
+  height:100%;
+  position:absolute;
+  top:0%;
+  z-index:-9999;
+  background-image: -webkit-linear-gradient(left top, rgba(94, 199, 204, 0.00) 0%, rgba(94, 199, 204, 1.00) 50%, rgba(238, 238, 238, 0.00) 100%);
+  background-image: -moz-linear-gradient(left top, rgba(94, 199, 204, 0.00) 0%, rgba(94, 199, 204, 1.00) 50%, rgba(238, 238, 238, 0.00) 100%);
+  background-image: -o-linear-gradient(left top, rgba(94, 199, 204, 0.00) 0%, rgba(94, 199, 204, 1.00) 50%, rgba(238, 238, 238, 0.00) 100%);
+  background-image: -ms-linear-gradient(left top, rgba(94, 199, 204, 0.00) 0%, rgba(94, 199, 204, 1.00) 50%, rgba(238, 238, 238, 0.00) 100%);
+  background-image: linear-gradient(left top, rgba(94, 199, 204, 0.00) 0%, rgba(94, 199, 204, 1.00) 50%, rgba(238, 238, 238, 0.00) 100%);
+  animation: gradient 10s infinite;
+}
+
+@keyframes gradient{
+  0%{
+    left:100%;
+  }
+  100%{
+    left:-500%;
+  }
+}
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a,a:visited
+{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+.content-center{
+  width: 60%;
+  height: 170px;
+  left: 0;
+  right: 0 ;
+  margin: 0 auto;
+  display:table;
+  position: absolute;
+  margin-top: 200px;
+}
+
+.tower{
+  /* width: 230px; */
+  width: 27%;
+  height: 170px;
+  float: left;
+  margin:0 0 0 0;
+  padding: 0 0 0 0;
+  display: flex;
+  margin-right: 5%;
+  flex-direction: column-reverse;
+  align-items: center;
+  border-bottom: 8px solid #fff;
+  border-radius:5px;
+}
+.tower:nth-child(2){
+ margin-left:25px;
+}
+.tower:nth-child(1)::after , .tower:nth-child(2)::after , .tower:nth-child(3)::after{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: block;
+  margin-top: 70px;
+  font-size: 30px;
+  color: #ffffff;
+}
+.tower:nth-child(1)::after{
+  content: '1';
+}
+.tower:nth-child(2)::after{
+  content: '2';
+}
+.tower:nth-child(3)::after{
+  content: '3';
+}
+
+.tower:last-child{
+  float: right;
+  margin-right: 0;
+}
+
+.tower::before{
+  content: '';
+  width: 8px;
+  height: 170px;
+  position: absolute;
+  background:#292929;
+  /* left: 0 ;
+  right: 0; */
+  display: table;
+  margin: 0 auto;
+  z-index: 9991;
+  border-radius: 10px 10px 0 0 ;
+}
+
+
+.tower-drop{
+  background: red;
+}
+.tower-out{
+  background: rgb(246, 246, 246);
+}
+
+.disk{
+  display: block;
+  height: 40px;
+  margin-bottom:inherit;
+  border-radius:100px;
+  cursor: pointer;
+  border-bottom: 3px solid #f2f2f2;
+  z-index: 9992;
+}
+.disk-move{
+  margin-bottom: inherit !important;
+  background: blue  !important;
+}
+.ui-state-disabled{
+  opacity: 1 !important;
+}
+
+.disk-1{
+  /* width: 60px; */
+  width: 30%;
+  background: #fff;
+}
+.disk-2{
+  /* width: 120px; */
+  width: 55%;
+  background: #fff;
+  z-index: 9996;
+}
+.disk-3{
+  /* width: 200px; */
+  width: 85%;
+  background: #fff;
+  z-index: 9997;
+}
+
+.move-counts{
+  position: absolute;
+  margin: 0 auto;
+  width: 200px;
+  display: block;
+  left: 0 ;
+  right: 0 ;
+  margin-top: 30px;
+  color: #fff;
+  font-family: arial;
+  direction: rtl;
+}
+.move-counts span{
+  font: 20px IRANSans;
+}
+.move-counts input{
+  font-size: 20px;
+  background: transparent ;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  display: inline;
+  padding: 6px;
+}
+
+.help-popup{
+  width: 25%;
+  height: auto;
+  padding: 10px;
+  background: rgba(0, 0, 0,0.10);
+  border-radius: 50px;
+  position: fixed;
+  margin:0 auto;
+  left: 0 ;
+  right: 0;
+  display: block;
+  z-index: 9996;
+  bottom: 100px;
+  font: 15px IRANSans;
+  color: #fff;
+  direction: rtl;
+}
+
+#reset{
+  border: none;
+  background: transparent url(images/reset.png)no-repeat scroll center;
+  background-size: 70%;
+  border-radius: 50em;
+  padding: 20px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  transition: all 500ms ease;
+  cursor: pointer;
+  outline: none;
+}
+#reset:hover{
+  transform:rotate(-360deg);
+}
+#reset:focus{
+  transform: scale(1.5);
+}
+
+
+
+/* Animations */
+.tower-animation-fadeout{
+  animation: anime_fadeout 500ms linear infinite;
+}
+@keyframes anime_fadeout{
+    0%{
+      background: rgba(0, 0, 0,0.10);
+    }
+    50%{
+      background: rgba(0, 0, 0,0.20);
+    }
+   100%{
+      background: rgba(0, 0, 0,0.10);
+    }
+}
+
+.anime-scale{
+  transition: all 300ms ease-in;
+  transform: scale(0.50,0.50);
+
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 9990;
+}
+
+#confetti{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events:none;
+  display: none;
+
+}
+
+.message {
+  width: 600px;
+  height: 280px;
+  z-index: 9989;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 50px;
+  animation: fade_in 0.6s;
+  animation-fill-mode: forwards;
+}
+.gotcha {
+  font-size: 64px;
+  color: #3b79ac;
+  opacity: 0;
+  animation: gotcha_anim 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+.explanation {
+  font-size: 28px;
+  line-height: 45px;
+  width: 560px;
+  padding-top: 15px;
+  margin: 15px auto 40px;
+  opacity: 0;
+  border-top: 1px solid #ccc;
+  animation: fade_in 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+.return_link {
+  font-size: 24px;
+  color: skyblue;
+  text-align: center;
+  animation: fade_in 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+@keyframes gotcha_anim {
+  0% {
+    opacity: 0;
+    font-size: 32px;
+  }
+  50% {
+    opacity: 1;
+    font-size: 72px;
+    transform: rotate(10deg);
+  }
+  100% {
+    font-size: 64px;
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@media screen and (max-width:1000px) {
+  .help-popup{
+    width:70%;
+    bottom: 10px;
+  }
+}
